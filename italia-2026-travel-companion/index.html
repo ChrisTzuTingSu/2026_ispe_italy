@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#f7f3eb" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Italia 2026" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Italia 2026</title>
+</head>
+<body>
+  <div id="offlineBanner" class="offline-banner" hidden>目前離線 · 行程、導覽與已存票券仍可使用</div>
+  <header class="topbar">
+    <div><div class="eyebrow">ITALIA · 2026</div><h1 id="pageTitle">今天</h1></div>
+    <button class="icon-button" id="installBtn" hidden aria-label="安裝 App">＋</button>
+  </header>
+  <main id="app" tabindex="-1"></main>
+  <nav class="tabbar" aria-label="主要導覽">
+    <button data-view="today" class="active"><span>⌂</span>今天</button>
+    <button data-view="timeline"><span>≡</span>行程</button>
+    <button data-view="tickets"><span>▣</span>票券</button>
+    <button data-view="guides"><span>◇</span>導覽</button>
+    <button data-view="more"><span>•••</span>更多</button>
+  </nav>
+  <input id="fileInput" type="file" accept="application/pdf,image/*" hidden />
+  <script src="app.js" defer></script>
+</body>
+</html>
