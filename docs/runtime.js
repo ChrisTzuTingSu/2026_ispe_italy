@@ -221,8 +221,24 @@ app.addEventListener('click',async event=>{
   if(action==='guide')showGuide(button.dataset.id);
   if(action==='upload'){uploadTarget=button.dataset.id;fileInput.value='';fileInput.click();}
   if(action==='open-ticket'){
-    const item=await dbGet(button.dataset.id);if(!item)return;
-    const url=URL.createObjectURL(item.file),anchor=document.createElement('a');anchor.href=url;anchor.target='_blank';anchor.rel='noopener';anchor.click();setTimeout(()=>URL.revokeObjectURL(url),60000);
+    const previewWindow=window.open('about:blank','_blank');
+    if(previewWindow){
+      previewWindow.opener=null;
+      previewWindow.document.title='正在開啟票券…';
+      previewWindow.document.body.innerHTML='<p style="font:17px -apple-system,BlinkMacSystemFont,sans-serif;padding:24px;color:#333">正在讀取這支 iPhone 裡的票券…</p>';
+    }
+    try{
+      const item=await dbGet(button.dataset.id);
+      if(!item?.file){previewWindow?.close();alert('找不到這張票券，請重新存入 PDF 或圖片。');return;}
+      const file=item.file instanceof Blob?item.file:new Blob([item.file],{type:item.type||'application/octet-stream'});
+      const url=URL.createObjectURL(file);
+      if(previewWindow)previewWindow.location.replace(url);else window.location.assign(url);
+      setTimeout(()=>URL.revokeObjectURL(url),600000);
+    }catch(error){
+      previewWindow?.close();
+      alert('無法開啟票券，請重新存入檔案後再試一次。');
+      console.error(error);
+    }
   }
   if(action==='delete-ticket'&&confirm('只從這支裝置刪除這張票券？')){await dbDelete(button.dataset.id);renderTickets();}
   if(action==='more-tab'){moreTab=button.dataset.tab;renderMore();}
