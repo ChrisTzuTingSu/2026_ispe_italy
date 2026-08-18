@@ -155,7 +155,7 @@ E('11:30–12:45','聖馬可大教堂','必須購買官方時段票；官方只�
 E('12:45–13:50','提早午餐','14:00 總督宮優先；選能在 50–60 分鐘完成的餐廳。','food','Piazza San Marco Venice',{return:'sep6'}),
 E('14:00–16:10','總督宮','議會廳 → Tintoretto《天堂》→ 嘆息橋 → 監獄；一般票以正式票券規則為準。','fixed','Doge Palace Venice',{return:'sep6'}),
 E('16:10–17:20','海濱 → Ferrovia・領行李','約 16:25 開始搭船回 Santa Lucia；17:05 抵達後立刻取行李。','move','Venezia Santa Lucia',{return:'sep6'}),
-E('17:57–20:25','Italo 8992：Venezia S. Lucia → Milano Centrale','時間與車次來自威尼斯預排；正式票券尚未提供，購票後以票面為最高優先。','warn','Milano Centrale',{return:'sep6'}),
+E('17:57–20:25','Italo 8992：Venezia S. Lucia → Milano Centrale','正式車票已確認；建議提早抵達 Santa Lucia，車廂、座位與臨時變更以票面及車站看板為準。','fixed','Milano Centrale',{return:'sep6'}),
 E('20:35–20:50','M3 Centrale FS → Porta Romana・入住','方向 San Donato；飯店名稱與地址仍待補。','stay','Porta Romana Milan',{return:'sep6'})]},
 {date:'2026-09-06',d:'9/6',dow:'日',city:'米蘭 → 台北',subtitle:'延後返程組',events:[
 E('06:10–06:20','起床後最後整理・Porta Romana 退房','護照、電子機票、退稅單與要查驗的商品放在隨身可取位置。','stay','Porta Romana Milan',{return:'sep6'}),
@@ -192,7 +192,7 @@ const tickets=[
 {id:'venice-actv',date:'9/3–9/5',title:'ACTV 48 小時票＋Mestre 區間車',note:'48h 票從首次驗票起算；一般 ACTV 時間票不含 Trenitalia，區間車需另購',day:11,pending:true,cond:{return:'sep6'}},
 {id:'venice-san-marco',date:'9/5 11:30',title:'聖馬可大教堂官方時段票',note:'官方售票 · 約 5 分鐘遲到容許 · 肩膝遮蔽 · 依購買套票確認是否含 Pala d’Oro／博物館',day:13,pending:true,cond:{return:'sep6'}},
 {id:'venice-doge',date:'9/5 14:00',title:'總督宮（待購／待上傳）',note:'預留約 2 小時；一般票或指定時段以正式票面為準',day:13,pending:true,cond:{return:'sep6'}},
-{id:'venice-return',date:'9/5 17:57',title:'Italo 8992 Venezia → Milano',note:'預排為 17:57–20:25；正式車票尚未提供，購票後以票面為準',day:13,pending:true,cond:{return:'sep6'}},
+{id:'venice-return',date:'9/5 17:57',title:'Italo 8992・Venezia → Milano',note:'17:57–20:25 · 僅 9/6 返程組 · 車廂、座位與票號只保存在個人票券檔',day:13,cond:{return:'sep6'}},
 {id:'porta-romana-hotel',date:'9/5–9/6',title:'Porta Romana 飯店（待補）',note:'9/6 返程組 · 請補名稱、地址與入住憑證',day:13,pending:true,cond:{return:'sep6'}},
 {id:'mxp-hotel',date:'9/4',title:'Holiday Inn Express Malpensa',note:'9/5 返程組 · 憑證 3 人 · PIN 僅存私人檔',day:12,cond:{return:'sep5'}},
 {id:'flight-sep5',date:'9/5 11:15',title:'BR96 MXP → TPE',note:'EVA Air T1 Area 18 · 電子機票為準',day:13,cond:{return:'sep5'}},
