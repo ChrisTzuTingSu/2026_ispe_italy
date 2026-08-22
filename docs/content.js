@@ -94,14 +94,20 @@ const foodSpots=[
 {id:'rome-giolitti',city:'羅馬',near:'Pantheon／Trevi',name:'Giolitti',kind:'Gelato／甜點',try:'先付款再拿單據點口味；可選經典開心果、榛果或季節水果。',budget:'€–€€',note:'老店且位置方便，但人多時把它當備選，不為排隊折返。',place:'Via degli Uffici del Vicario 40 Rome',url:'https://www.giolitti.it/en/the-local/'},
 {id:'rome-roscioli',city:'羅馬',near:'Campo de’ Fiori／Navona',name:'Antico Forno Roscioli',kind:'Pizza／烘焙',try:'pizza al taglio、pizza bianca、supplì；適合快速分食。',budget:'€–€€',note:'與正式餐廳 Roscioli 不同；早午餐可控制時間，8/24 必須保留前往梵蒂岡的緩衝。',place:'Antico Forno Roscioli Rome',url:'https://roscioli.com/'},
 {id:'rome-pizzarium',city:'羅馬',near:'Vatican Museums／Cipro',name:'Pizzarium Bonci',kind:'Pizza al taglio',try:'依重量計價的方形披薩；先看當日口味再點小塊。',budget:'€€',note:'不在博物館正門口；只有導覽前時間充足才去，排隊或移動不順便改吃 Borgo／Vaticano 周邊快食。',place:'Pizzarium Bonci Rome',url:'https://bonci.it/'},
+{id:'rome-mercato',city:'羅馬',near:'Roma Termini／The RomeHello',name:'Mercato Centrale Roma',kind:'多人自由選食',try:'披薩、義大利麵、熟食與甜點可分開點，適合第一晚有人想吃不同餐點。',budget:'€–€€',note:'就在 Roma Termini；8/23 若沒有體力去 Trevi，回住宿前在這裡吃最不繞路。官方資訊顯示每日營業，當晚仍確認各攤位時間。',place:'Mercato Centrale Roma Termini',url:'https://www.mercatocentrale.com/rome/info/'},
 {id:'florence-ditta',city:'佛羅倫斯',near:'Uffizi／Santa Croce',name:'Ditta Artigianale · Via dei Neri',kind:'精品咖啡',try:'espresso、filter coffee、早餐；可順便看咖啡豆。',budget:'€–€€',note:'Via dei Neri 32R，適合烏菲茲前後；佛羅倫斯門牌 R 是紅色商業門牌。',place:'Ditta Artigianale Via dei Neri 32R Firenze',url:'https://dittaartigianale.com/en/pages/locali'},
 {id:'florence-mercato',city:'佛羅倫斯',near:'C-Hotels Club／San Lorenzo',name:'Mercato Centrale Firenze',kind:'多人自由選食',try:'lampredotto、pasta、披薩、起司與熟食；分流後也容易集合。',budget:'€–€€',note:'離飯店與 Montelungo 方便，適合有人想吃不同東西的團體；依現場攤位與營業時間選。',place:'Mercato Centrale Firenze',url:'https://www.mercatocentrale.com/florence/'},
 {id:'florence-vivoli',city:'佛羅倫斯',near:'Santa Croce／Uffizi 東側',name:'Vivoli',kind:'Gelato／Affogato',try:'gelato 或招牌式 affogato；甜度高，適合多人分口味。',budget:'€–€€',note:'靠近 Santa Croce，若漫遊走到東側可順路；不是所有行程日都值得專程繞去。',place:'Vivoli Firenze',url:'https://vivoli.it/en/'},
 {id:'florence-fratellini',city:'佛羅倫斯',near:'Orsanmichele／Duomo',name:'I Fratellini',kind:'Panino／小酒',try:'現點 panino 搭一杯酒；適合站食與短暫休息。',budget:'€',note:'店面小，尖峰常排隊；把它當城市漫遊中的快食選項。',place:'Via dei Cimatori 38R Firenze',url:'https://www.google.com/maps/search/?api=1&query=I+Fratellini+Firenze'},
+{id:'florence-dalloste',city:'佛羅倫斯',near:'S.M.N.／C-Hotels Club',name:'Trattoria Dall’Oste · Via Alamanni',kind:'托斯卡尼牛排／已訂晚餐',try:'Fiorentina 依重量計價，先確認肉種、熟度、每公斤價格與實際重量；可搭配前菜與蔬菜分食。',budget:'€€€–€€€€',status:'已確認 · 8/25 19:00',note:'確認連結對應 Via Alamanni 3/5R，靠近住宿；是正式晚餐，不再把米開朗基羅廣場硬塞在同一晚。',place:'Via Alamanni 3/5R Firenze',url:'https://trattoriadalloste.com/'},
 {id:'milan-marchesi',city:'米蘭',near:'Galleria／Duomo',name:'Marchesi 1824 · Galleria',kind:'咖啡／糕點',try:'espresso、mignon 小糕點、巧克力；坐席與外帶價位感不同。',budget:'€€–€€€',note:'重點是歷史品牌與環境，不是平價早餐；也適合一次完成伴手禮採買。',place:'Marchesi 1824 Galleria Milano',url:'https://www.marchesi1824.com/ww/en/history.html'},
 {id:'milan-camparino',city:'米蘭',near:'Duomo／Galleria',name:'Camparino in Galleria',kind:'Aperitivo／咖啡',try:'Campari 系列 aperitivo；不喝酒可先問無酒精選項。',budget:'€€€',note:'Piazza Duomo 21；歷史地點與核心區價格，點餐前先看菜單與座席規則。',place:'Piazza Duomo 21 Milano',url:'https://www.camparino.com/location/'},
 {id:'milan-peck',city:'米蘭',near:'Duomo',name:'Peck',kind:'熟食／美食百貨',try:'熟食、起司、火腿、甜點；可用較小份量組成快速午餐。',budget:'€€–€€€',note:'Via Spadari 9，適合想同時看食品伴手禮的人；冷藏品不適合長時間行程。',place:'Via Spadari 9 Milano',url:'https://peck.it/i-nostri-negozi/'},
 {id:'milan-luini',city:'米蘭',near:'Duomo',name:'Luini',kind:'Panzerotto',try:'經典番茄起司炸／烤麵包餃，快速且方便分食。',budget:'€',note:'8 月可能有季節休業，出發前務必先看官方公告；沒開就不要現場久等。',place:'Via Santa Radegonda 16 Milano',url:'https://www.luini.it/luini_fritto.html'},
+{id:'milan-amabile',city:'米蘭',near:'MiCo／Portello',name:'Amabile Milano',kind:'披薩／義大利菜・已訂聚餐',try:'拿坡里披薩、義大利麵或海鮮；團體點餐先確認是否已有固定菜單。',budget:'€€',status:'已確認 · 8/30 19:00 Lab 聚餐',note:'Viale Teodorico 26，靠近 MiCo 與 Portello；不是 8/31，已移到 8/30 時間軸。',place:'Viale Teodorico 26 Milano',url:'https://amabilegroup.it/contatti/'},
+{id:'milan-citylife',city:'米蘭',near:'Allianz MiCo／Tre Torri',name:'CityLife Shopping District 餐飲區',kind:'多人分流／雨天備案',try:'義大利菜、pizza、panino、咖啡到亞洲料理皆有；先約同一集合點再各自選。',budget:'€–€€€',note:'M5 Tre Torri 直達，官方餐飲頁列出多種店家；適合會議後不想再研究或天氣不佳的晚上。',place:'CityLife Shopping District Milano',url:'https://citylifeshoppingdistrict.it/it/ristoranti/'},
+{id:'milan-portello',city:'米蘭',near:'Residence Vigliani／Portello',name:'Piazza Portello 餐飲區',kind:'平價多人備案',try:'pizza romana、熟食、自助餐、咖啡或超市採買；適合疲累時快速解決。',budget:'€–€€',note:'Via Grosotto 7，較靠近 Vigliani 組；多數商店約 21:00 前，晚餐不要拖太晚才去。',place:'Piazza Portello Milano',url:'https://piazzaportello.com/it/ristorazione/'},
+{id:'milan-picanhas',city:'米蘭',near:'Hotel Oro Blu／Lotto',name:'Picanha’s Top Carne · Lotto',kind:'巴西烤肉／肉類',try:'giro carne 或單點肉類；先確認固定價格、飲料及甜點是否另計。',budget:'€€€',note:'就在 Piazzale Lotto 14，對 Oro Blu 組最方便；肉量大，較適合確定想吃肉的晚上。',place:'Piazzale Lorenzo Lotto 14 Milano',url:'https://www.picanhastopcarne.com/lotto/menu/'},
 {id:'milan-navigli',city:'米蘭',near:'Navigli／Darsena',name:'Navigli 現場挑 aperitivo',kind:'Aperitivo',try:'先看飲料價格、是否含小食、是否為 buffet 或單盤。',budget:'€€–€€€',note:'店型變動快，不綁定單一名店；先完成洗衣巷導覽，再選有清楚菜單與座位的店。',place:'Darsena Milano',url:'https://www.yesmilano.it/en/see-and-do/venues/navigli'},
 {id:'venice-rosasalva-mestre',city:'威尼斯',near:'Mestre BnB／車站',name:'Rosa Salva · Mestre',kind:'早餐／糕點',try:'咖啡、cornetto、鹹點；適合 9/4 出發前或回住宿前。',budget:'€–€€',note:'Via Cappuccina 17，比本島歷史咖啡館更容易控制時間與預算。',place:'Via Cappuccina 17 Mestre',url:'https://rosasalva.it/dove-trovarci/'},
 {id:'venice-rosasalva-sanMarco',city:'威尼斯',near:'San Marco',name:'Rosa Salva · San Marco',kind:'糕點／輕食',try:'zaleti 玉米葡萄乾餅、糕點與咖啡。',budget:'€€',note:'San Marco 950；可作為大教堂與總督宮之間的備選，仍以正式入場時間為先。',place:'San Marco 950 Venice',url:'https://pasticceria.rosasalva.it/en/'},
@@ -111,6 +117,29 @@ const foodSpots=[
 {id:'como-cavaturacciolo',city:'科莫湖',near:'Bellagio',name:'Enoteca CavaTuracciolo',kind:'酒館／起司冷肉',try:'在地酒、起司、冷肉或簡單湖魚料理；先說明回程船時間。',budget:'€€–€€€',note:'Salita Genazzini 3；季節營業時間會變，船班日前再查。時間緊就改碼頭附近快食。',place:'Salita Genazzini 3 Bellagio',url:'https://www.bellagiolakecomo.com/en/wine-bars/cava-turacciolo-wine-bar'},
 {id:'como-flex',city:'科莫湖',near:'Como／Bellagio',name:'官方餐飲地圖作備選',kind:'依船班選餐廳',try:'優先找出餐時間明確、離碼頭近且菜單標價清楚的店。',budget:'€€–€€€',note:'湖區旺季不為景觀座位犧牲返程；最晚回程時間先告訴店員。',place:'Bellagio ferry terminal',url:'https://www.bellagiolakecomo.com/en/restaurants'}
 ];
+
+const dayMealPlans={
+'2026-08-23':[{title:'第一晚不繞路',note:'沒體力去 Trevi 就在 Termini／住宿附近吃；甜點只在精神足夠時加。',ids:['rome-mercato','rome-giolitti']}],
+'2026-08-24':[{title:'Pantheon → 梵蒂岡之間',note:'只能選一個順路快食，11:40 必須往博物館入口移動。',ids:['rome-roscioli','rome-pizzarium','rome-santeustachio']}],
+'2026-08-25':[{title:'已定晚餐＋白天備選',note:'19:00 Dall’Oste 已確認；午餐仍在中央市場，咖啡不為排隊壓縮票券時間。',ids:['florence-dalloste','florence-mercato','florence-ditta']}],
+'2026-08-26':[{title:'分流日容易集合',note:'酒莊組避免空腹；漫遊組可依 Santa Croce 動線選甜點。',ids:['florence-mercato','florence-vivoli','florence-fratellini']}],
+'2026-08-27':[{title:'一日遊回程後',note:'晚歸只選住宿附近、出餐快的地方，不再跨城追名店。',ids:['florence-mercato','florence-dalloste']}],
+'2026-08-28':[{title:'Duomo／Brera 與入住後',note:'白天以快食為主；晚餐可依兩間住宿選 CityLife、Portello 或 Lotto。',ids:['milan-luini','milan-peck','milan-citylife','milan-portello','milan-picanhas']}],
+'2026-08-29':[{title:'MiCo／CityLife／兩間住宿',note:'課程組與自由行組可各自用餐，晚間再回相同地鐵區域集合。',ids:['milan-citylife','milan-portello','milan-picanhas']}],
+'2026-08-30':[{title:'今晚已確定',note:'19:00 Lab 聚餐在 Amabile；下午行程需在 18:40 前收尾。',ids:['milan-amabile']}],
+'2026-08-31':[{title:'大會後自由晚餐',note:'Lab 聚餐不是今天；累了就選 MiCo、Portello 或住宿樓下，不必進市中心。',ids:['milan-citylife','milan-portello','milan-picanhas']}],
+'2026-09-01':[{title:'大會後自由晚餐',note:'按當天 session 結束時間與住宿分組選，不為同桌集合增加長距離移動。',ids:['milan-citylife','milan-portello','milan-picanhas']}],
+'2026-09-02':[{title:'AsPEN 聚餐備案',note:'今晚已有 AsPEN 聚餐；以下只在主辦取消、延後或需先墊胃時使用。',ids:['milan-citylife','milan-portello']}],
+'2026-09-03':[
+  {title:'留在米蘭組',note:'Navigli 用餐前先看菜單與是否含小食。',ids:['milan-navigli'],cond:{return:'sep5'}},
+  {title:'威尼斯組',note:'Rialto 附近以小食與 gelato 為主，不在觀光核心區盲點無標價套餐。',ids:['venice-cicchetti','venice-suso'],cond:{return:'sep6'}}
+],
+'2026-09-04':[
+  {title:'科莫湖組',note:'所有用餐都服從回程船班，點餐時先告知最晚離席時間。',ids:['como-cavaturacciolo','como-flex'],cond:{return:'sep5'}},
+  {title:'威尼斯離島組',note:'Burano 午餐與 Dorsoduro 晚餐都不跨區追店，選標價與出餐時間清楚者。',ids:['venice-cicchetti','venice-suso'],cond:{return:'sep6'}}
+],
+'2026-09-05':[{title:'聖馬可預約之間',note:'午餐只能控制在約一小時；歷史咖啡館不是趕行程時的首選。',ids:['venice-rosasalva-sanMarco','venice-suso','venice-florian'],cond:{return:'sep6'}}]
+};
 
 const souvenirItems=[
 {id:'gift-rome-coffee',category:'咖啡茶飲',city:'羅馬',item:'Sant’Eustachio 咖啡豆／咖啡粉鐵罐',buyNear:'Pantheon',budget:'€€',why:'體積小、與 8/24 動線重疊，適合送喝咖啡的人。',carry:'確認研磨度；密封乾貨可托運或手提，回台前保留原包裝。',place:'Piazza di Sant Eustachio 82 Rome',url:'https://www.italia.it/en/lazio/rome/caffe-sant-eustachio'},

@@ -27,8 +27,8 @@ const E=(time,title,note,type='flex',place='',cond=null)=>({time,title,note,type
 const days=[
 {date:'2026-08-23',d:'8/23',dow:'日',city:'羅馬',subtitle:'抵達・古羅馬・有體力才看許願池',events:[
 E('07:20','抵達 FCO 機場','新航班時間。入境與領行李預留 85–100 分鐘；上午不再排任何景點。','move','Fiumicino Airport'),
-E('09:00–09:20','前往 FCO 火車站','搭第一班適合的 Leonardo Express；官方車程 32 分鐘、通常每 15 分鐘一班。','move','Fiumicino Aeroporto train station'),
-E('09:40–10:20','抵達 Roma Termini','以實際出關與班次為準；10:15 仍未搭上火車時，啟動計程車備案。','move','Roma Termini'),
+E('09:00–09:20','前往 FCO 火車站','搭第一班適合的 Leonardo Express；官方車程 32 分鐘、尖峰約每 15 分鐘一班。因 12:10 競技場是硬預約，不把道路塞車風險較高的機場巴士當首選。','move','Fiumicino Aeroporto train station'),
+E('09:40–10:20','抵達 Roma Termini','以實際出關與班次為準；若 09:40 仍未離開機場，立即重算寄行李與到場時間，必要時改搭正式排班計程車。','move','Roma Termini'),
 E('10:00–10:35','The RomeHello 寄放行李','只帶水、帽子、證件與當天票券；不得帶大型行李前往競技場。','stay','The RomeHello Rome'),
 E('10:35–11:05','買輕食、上廁所、補水','只買三明治或可帶走的食物，不進正式餐廳。延誤時直接略過。','food','The RomeHello Rome'),
 E('11:10','從飯店前往競技場','預計 11:35–11:45 抵達；11:20 仍未離開飯店就直接搭計程車。','move','Colosseum'),
@@ -61,7 +61,8 @@ E('12:25','中央市場・午餐','保留至少 40 分鐘用餐、補水與上�
 E('13:35','大圓頂行李寄存','中大型包必須先寄放 Piazza Duomo 38/r；攜帶票券與有照片證件。','fixed','Piazza del Duomo 38 red Florence'),
 E('14:15','Brunelleschi 大圓頂登頂','463 階、無電梯，遲到寬限僅約 5 分鐘；幽閉或懼高者不建議勉強。','fixed','Brunelleschi Dome Florence'),
 E('16:00','洗禮堂／歌劇博物館或回飯店休息','Brunelleschi Pass 其他景點可在 3 個日曆日內各進一次；依票券效期確認。','flex','Opera del Duomo Museum Florence'),
-E('18:15','老橋 → Santo Spirito → 米開朗基羅廣場','正常版約 2 小時；累了可在 Santo Spirito 用餐，搭車上山看夕陽。','flex','Piazzale Michelangelo Florence')]},
+E('17:30','回 C-Hotels Club 休息・集合','登頂後不要再硬塞米開朗基羅廣場；老橋與 Oltrarno 留給 8/26 漫遊組或其他空檔。','flex','C-Hotels Club Florence'),
+E('19:00','Trattoria Dall’Oste 晚餐','已確認 8/25 19:00；Google Maps 連結對應 Via Alamanni 3/5R 分店，靠近 S.M.N. 與住宿。','fixed','Via Alamanni 3/5R Firenze')]},
 {date:'2026-08-26',d:'8/26',dow:'三',city:'佛羅倫斯',subtitle:'大衛、Medici 與分流午後',events:[
 E('08:05','從 C-Hotels Club 出發','步行約 15–18 分鐘；08:30 前抵達學院美術館。','move',"Galleria dell'Accademia Florence"),
 E('08:45','Galleria dell’Accademia','先走《囚徒》長廊到 David，再回頭看石膏模型與樂器館。','fixed',"Galleria dell'Accademia Florence"),
@@ -97,11 +98,12 @@ E('18:00','CityLife 建築散步','Tre Torri、城市公園與住宅曲線；從
 E('08:00','ISPE 會前課程 Day 2','僅適用另外完成課程報名者；早餐不包含在會議註冊。','warn','Allianz MiCo',{course:'enrolled'}),
 E('10:00','自由行：Sant’Ambrogio → Colonne di San Lorenzo','看米蘭早期基督教層次，再一路往舊城門與運河區。','flex',"Basilica di Sant'Ambrogio Milan",{course:'free'}),
 E('15:30','自由行：Navigli 白天散步','看 Vicolo dei Lavandai、欄杆式公寓與運河運大理石的歷史；晚間人多要顧包。','flex','Vicolo dei Lavandai Milan',{course:'free'}),
-E('18:30','晚餐・準備正式大會','識別證、行動電源、外套與明日個人議程前一晚放好。','food','Lotto Milano')]},
+E('18:40','前往 Amabile Milano 集合','餐廳在 MiCo／Portello 一帶；先回住宿者依地圖預留交通時間。','move','Viale Teodorico 26 Milano'),
+E('19:00','Lab 聚餐・Amabile Milano','日期、時間與餐廳已確認；地址 Viale Teodorico 26。若群組臨時變更，以最新通知為準。','fixed','Viale Teodorico 26 Milano')]},
 {date:'2026-08-31',d:'8/31',dow:'一',city:'米蘭',subtitle:'ISPE 正式大會 Day 1',events:[
 E('07:30','從住宿前往 Allianz MiCo','Hotel Oro Blu 可走 Lotto；Residence Vigliani 可走 Portello。實際入口依大會通知。','move','Allianz MiCo'),
 E('08:30','42nd ISPE Annual Meeting','正式大會為 8/31–9/2；精確 session 以個人議程為準。午餐與茶歇包含、早餐不含。','fixed','Allianz MiCo'),
-E('18:30','Lab 聚會／晚餐','集合點待補；若臨時更換，以群組置頂訊息為唯一版本。','warn','Allianz MiCo')]},
+E('18:30','自由晚餐・回住宿休息','Lab 聚餐已改在 8/30 19:00 Amabile；今晚可直接使用下方 MiCo／Lotto／Portello 備選。','food','Allianz MiCo')]},
 {date:'2026-09-01',d:'9/1',dow:'二',city:'米蘭',subtitle:'ISPE 正式大會 Day 2',events:[
 E('07:30','前往 Allianz MiCo','使用同一張實體卡或同一台手機進出與轉乘，避免 contactless 被拆成不同旅程。','move','Allianz MiCo'),
 E('08:30','ISPE 正式大會','依個人議程；海報與口頭報告場次另存到手機行事曆。','fixed','Allianz MiCo'),
@@ -109,7 +111,8 @@ E('18:30','45 分鐘微散步：Tre Torri／CityLife','想休息可直接回飯�
 {date:'2026-09-02',d:'9/2',dow:'三',city:'米蘭',subtitle:'ISPE 閉幕與整理日',events:[
 E('07:30','前往 Allianz MiCo','帶可折疊袋收會議資料，避免把護照與全部卡片帶去會場。','move','Allianz MiCo'),
 E('08:30','ISPE 正式大會・最後一天','閉幕後確認報帳、證書、行李與隔日《最後的晚餐》具名票券。','fixed','Allianz MiCo'),
-E('17:30','回住宿休息・整理票券','確認 9/3 08:25 出發，所有人票券姓名與證件一致。','flex','Lotto Milano')]},
+E('17:30','回住宿休息・整理票券','確認 9/3 08:25 出發，所有人票券姓名與證件一致。','flex','Lotto Milano'),
+E('晚間','AsPEN 聚餐','日期已確認為 9/2 晚上；確切時間、餐廳與集合點仍待主辦通知，收到後可局部更新。','warn')]},
 {date:'2026-09-03',d:'9/3',dow:'四',city:'米蘭／威尼斯分流',subtitle:'最後的晚餐後，9/6 組前往 Mestre',events:[
 E('08:25','從住宿出發','Lotto 搭 M1 至 Conciliazione／Cadorna 後步行；預留尖峰與找入口時間。','move','Cenacolo Vinciano'),
 E('09:00','Cenacolo 售票處報到','憑證要求提前 30 分鐘，出示有效身分證件；具名票不可更名。','fixed','Cenacolo Vinciano'),
@@ -144,8 +147,8 @@ E('15:48–17:10','Line 1 → Salute・安康聖母聖殿','15:56 抵達 Salute�
 E('17:10–18:40','Dorsoduro → 學院橋 → Zattere','沿水岸慢走，不加博物館；學院橋回看 Salute 是重點視角。','flex','Ponte dell Accademia Venice',{return:'sep6'}),
 E('18:40–21:00','Dorsoduro 晚餐・回 Mestre','約 20:00 後搭船回 Ferrovia，約 20:45–21:00 搭區間車回 Mestre。','food','Zattere Venice',{return:'sep6'})]},
 {date:'2026-09-05',d:'9/5',dow:'六',city:'返台／威尼斯分流',subtitle:'9/5 組飛行；9/6 組走本島後回米蘭',events:[
-E('07:30','前往 MXP Terminal 1','EVA Air 在 T1、Area 18，櫃檯起飛前 3 小時開、前 1 小時關；退稅在 T1 2F Area 12。','move','Malpensa Airport Terminal 1',{return:'sep5'}),
-E('08:15','抵達機場・退稅與報到','退稅可能排長隊；先確認單據、商品、護照與登機資料。','fixed','Malpensa Airport Terminal 1',{return:'sep5'}),
+E('06:45','機場飯店退房・前往 MXP T1','退稅組以起飛前約 4 小時抵達為目標；前一晚向飯店確認接駁或預約車，不臨時等車。','move','Malpensa Airport Terminal 1',{return:'sep5'}),
+E('07:15','抵達機場・整理退稅資料','EVA Air 在 T1 Area 18，退稅在 T1 2F Area 12；先備妥單據、商品、護照與登機資料，櫃檯開放仍以現場為準。','fixed','Malpensa Airport Terminal 1',{return:'sep5'}),
 E('11:15','BR96 米蘭 → 台北','時間來自原始行程；最終仍以電子機票與航空公司通知為準。','fixed','Malpensa Airport Terminal 1',{return:'sep5'}),
 E('08:20–09:05','Via Nervesa BnB 退房 → Santa Lucia 寄行李','約 08:35 搭區間車、08:50 抵達；依預排時間前進。','stay','Via Nervesa 13 Venice',{return:'sep6'}),
 E('09:05–10:15','步行至 Frari・榮耀聖母教堂','主看 Titian《聖母升天》《Pesaro 聖母》、Bellini 祭壇畫與 Canova 紀念碑。','flex','Basilica Santa Maria Gloriosa dei Frari Venice',{return:'sep6'}),
@@ -158,13 +161,11 @@ E('16:10–17:20','海濱 → Ferrovia・領行李','約 16:25 開始搭船回 S
 E('17:57–20:25','Italo 8992：Venezia S. Lucia → Milano Centrale','正式車票已確認；建議提早抵達 Santa Lucia，車廂、座位與臨時變更以票面及車站看板為準。','fixed','Milano Centrale',{return:'sep6'}),
 E('20:35–20:50','M3 Centrale FS → Porta Romana・入住','方向 San Donato；飯店名稱與地址仍待補。','stay','Porta Romana Milan',{return:'sep6'})]},
 {date:'2026-09-06',d:'9/6',dow:'日',city:'米蘭 → 台北',subtitle:'延後返程組',events:[
-E('06:10–06:20','起床後最後整理・Porta Romana 退房','護照、電子機票、退稅單與要查驗的商品放在隨身可取位置。','stay','Porta Romana Milan',{return:'sep6'}),
-E('06:20','從 Porta Romana 住宿出發','依同行者預排時間；退房後直接前往 M3。','move','Porta Romana Milan',{return:'sep6'}),
-E('06:25–06:35','M3 Porta Romana → Centrale FS','方向 Comasina；抵達後依車站看板找 Malpensa Express 月台。','move','Milano Centrale',{return:'sep6'}),
-E('06:40','抵達 Milano Centrale','依預排保留找月台時間；實際班次以當天車票與電子看板為準。','move','Milano Centrale',{return:'sep6'}),
-E('06:55–07:48','Malpensa Express → MXP Terminal 1','照同行者預排顯示；出發前一天再用正式票券或官方 App 確認。','move','Malpensa Airport Terminal 1',{return:'sep6'}),
-E('07:50–08:10','前往出境大廳・找 EVA Air','預留電梯、步行與找 Area 18 的時間。','move','Malpensa Airport Terminal 1',{return:'sep6'}),
-E('08:15','退稅・報到・托運行李','EVA Air Terminal 1、Area 18；退稅可能排隊，先確認單據與商品。','fixed','Malpensa Airport Terminal 1',{return:'sep6'}),
+E('05:35–05:45','最後整理・Porta Romana 退房','護照、電子機票、退稅單與要查驗的商品放在隨身可取位置。','stay','Porta Romana Milan',{return:'sep6'}),
+E('05:45','預約車前往 Milano Centrale','為了退稅提早到機場，清晨不把地鐵首班與轉乘當唯一方案；前一晚預約車。','move','Milano Centrale',{return:'sep6'}),
+E('06:10','抵達 Milano Centrale','依電子看板找 Malpensa Express 月台；先買好早餐，月台臨時變動仍以現場為準。','move','Milano Centrale',{return:'sep6'}),
+E('06:25–07:18','Malpensa Express → MXP Terminal 1','依目前官方 2026 時刻表採較早班次；9/5 晚再用官方 App／車票確認是否變動。','move','Malpensa Airport Terminal 1',{return:'sep6'}),
+E('07:20','抵達出境大廳・退稅與報到','接近起飛前 4 小時；EVA Air 在 T1 Area 18，退稅在 2F Area 12。','fixed','Malpensa Airport Terminal 1',{return:'sep6'}),
 E('11:15','BR96 米蘭 → 台北','與前一日相同航班時段的規劃；以各自電子機票為最終依據。','fixed','Malpensa Airport Terminal 1',{return:'sep6'})]}
 ];
 
@@ -196,7 +197,7 @@ const tickets=[
 {id:'porta-romana-hotel',date:'9/5–9/6',title:'Porta Romana 飯店（待補）',note:'9/6 返程組 · 請補名稱、地址與入住憑證',day:13,pending:true,cond:{return:'sep6'}},
 {id:'mxp-hotel',date:'9/4',title:'Holiday Inn Express Malpensa',note:'9/5 返程組 · 憑證 3 人 · PIN 僅存私人檔',day:12,cond:{return:'sep5'}},
 {id:'flight-sep5',date:'9/5 11:15',title:'BR96 MXP → TPE',note:'EVA Air T1 Area 18 · 電子機票為準',day:13,cond:{return:'sep5'}},
-{id:'flight-sep6',date:'9/6 11:15',title:'BR96 MXP → TPE',note:'預排 06:55 Centrale → 07:48 MXP T1；電子機票與當天交通資訊為準',day:14,cond:{return:'sep6'}}
+{id:'flight-sep6',date:'9/6 11:15',title:'BR96 MXP → TPE',note:'建議 06:25 Centrale → 07:18 MXP T1；9/5 晚仍以官方 App、車票與電子看板為準',day:14,cond:{return:'sep6'}}
 ];
 
 const S=(title,quick,look,deep,place='')=>({title,quick,look,deep,place});

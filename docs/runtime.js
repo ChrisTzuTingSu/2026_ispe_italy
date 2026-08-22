@@ -50,9 +50,9 @@ function eventCard(event){
 }
 function stayCards(day){
   let relevant=[];
-  if(day.date<='2026-08-24')relevant=stays.filter(x=>x.id==='rome');
-  else if(day.date<='2026-08-28')relevant=stays.filter(x=>x.id==='florence');
-  else if(day.date<'2026-09-03')relevant=stays.filter(x=>['vigliani','oroblu'].includes(x.id));
+  if(day.date==='2026-08-23')relevant=stays.filter(x=>x.id==='rome');
+  else if(day.date>='2026-08-24'&&day.date<='2026-08-27')relevant=stays.filter(x=>x.id==='florence');
+  else if(day.date>='2026-08-28'&&day.date<'2026-09-03')relevant=stays.filter(x=>['vigliani','oroblu'].includes(x.id));
   else if(day.date==='2026-09-03')relevant=stays.filter(x=>['vigliani','oroblu','venice-mestre'].includes(x.id));
   else if(day.date==='2026-09-04')relevant=stays.filter(x=>['mxp','venice-mestre'].includes(x.id));
   else if(day.date==='2026-09-05')relevant=stays.filter(x=>x.id==='porta-romana');
@@ -63,6 +63,16 @@ function stayCards(day){
     <p>${esc(x.address)}</p><p class="muted">${esc(x.note)}</p>
     ${x.address==='尚未收到住宿憑證'?'':`<div class="actions">${external(appleMap(x.address),'導航到住宿','strong')}${external(googleMap(x.address),'Google Maps')}</div>`}
   </article>`).join('')}`;
+}
+
+function compactFoodCard(item){
+  if(!item)return'';
+  return `<article class="day-food-card"><div><span class="kicker">${esc(item.near)}</span><h3>${esc(item.name)}</h3><p>${esc(item.kind)} · ${esc(item.budget)}</p>${item.status?`<span class="meal-status">${esc(item.status)}</span>`:''}</div><div class="actions">${external(appleMap(item.place),' 導航','strong')}${external(item.url,'資訊')}</div></article>`;
+}
+function renderDayMeals(day){
+  const plans=(dayMealPlans[day.date]||[]).filter(plan=>condVisible(plan.cond));
+  if(!plans.length)return'';
+  return `<div class="section-head day-food-head"><h2>這天附近吃什麼</h2><button data-action="more" data-tab="food">完整餐飲頁</button></div>${plans.map(plan=>`<section class="card day-food-group"><div class="day-food-intro"><b>${esc(plan.title)}</b><p>${esc(plan.note)}</p>${condBadge(plan.cond)}</div><div class="day-food-list">${plan.ids.map(id=>compactFoodCard(foodSpots.find(item=>item.id===id))).join('')}</div></section>`).join('')}`;
 }
 
 function renderToday(){
@@ -77,6 +87,7 @@ function renderToday(){
   <div class="section-head"><h2>${now<tripStart?'第一天關鍵時間':'今日時間軸'}</h2><button data-action="view" data-view="timeline">看全部</button></div>
   <section class="card">${events.slice(0,5).map(eventCard).join('')}</section>
   ${stayCards(day)}
+  ${renderDayMeals(day)}
   <div class="notice"><b>憑證優先</b><br>若 App 與電子票的日期、時間或集合點不同，一律以最新正式憑證為準。</div>`;
 }
 function renderTimeline(){
@@ -85,7 +96,7 @@ function renderTimeline(){
   <div class="day-title"><span class="kicker">${esc(day.date)} · ${esc(day.dow)}</span><h2>${esc(day.city)}</h2><p>${esc(day.subtitle)}</p></div>
   ${Object.values(profile).includes('all')?'<div class="notice compact"><b>目前顯示所有分流</b><br>到「更多 → 我的分組」選擇後，這裡只留你自己的行程。</div>':''}
   <section class="card timeline-card">${events.length?events.map(eventCard).join(''):'<div class="empty">這個分組今天沒有單獨項目。</div>'}</section>
-  ${stayCards(day)}`;
+  ${stayCards(day)}${renderDayMeals(day)}`;
   requestAnimationFrame(()=>document.querySelector('.date-chip.active')?.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}));
 }
 
@@ -150,6 +161,7 @@ function renderSafety(){
   <article class="card safety-card"><h2>花式不重要，斷開接觸才重要</h2><p>「踩畫」、簽名募款、幫忙買票、手環、假警察、擠上地鐵乘機翻包，核心都是讓你停下、分心或暴露財物。</p><ol><li>不停、不辯論、不接任何東西，直接說「No, grazie」往店家或群眾移動。</li><li>有人碰你時，一手壓住包、一手與人保持距離，大聲說「Non mi tocchi!」</li><li>不與對方拉扯或追逐；先離開包圍，再求助 112。</li></ol></article>
   <article class="card safety-card"><h2>地鐵與人潮</h2><ul><li>進站前就把手機收好，不在門邊打開錢包找票。</li><li>包在身體前面並拉鍊；手機不放屁股口袋或餐桌邊。</li><li>有人擠、擋路、丟東西或在扶梯突然停下，立即注意包和同伴。</li><li>主卡、備用卡、現金分三處；護照放貼身內袋。</li></ul></article>
   <article class="card safety-card"><h2>現金與付款</h2><p>建議每人總備 <b>€80–150</b> 小鈔，每日身上只放 <b>€30–50</b>。主要消費用卡／Apple Pay；ATM 與刷卡機若問要用 TWD 還是 EUR，選 <b>EUR</b>。米蘭 ATM 交通感應付款時，同一趟路線使用同一張實體卡或同一台裝置，且一卡只能算一人。</p></article>
+  <article class="card safety-card"><h2>退稅資料包・前一晚就整理</h2><ul><li>護照、登機資料、完整退稅單與購物收據集中放在可立刻取出的資料夾。</li><li>可能查驗的商品保持未使用狀態並放在托運前可取位置；先辦海關／退稅確認，再依現場指示托運。</li><li>手機另存英文姓名、生日、國籍、台灣英文地址、護照號碼、Email 與電話，填表不用臨時翻找。</li><li>退款信用卡由本人現場填寫；卡號、護照影本、PNR 與條碼不要放進公開程式碼或群組記事。</li></ul><p>MXP 退稅常排隊，兩個返程組都以接近起飛前 4 小時抵達為目標。</p></article>
   <article class="card safety-card"><h2>8 月暑熱</h2><p>12:00–18:00 盡量用室內景點、用餐與交通切斷曝曬；不等口渴才喝水。出現意識改變、無法行走、熱但不出汗時直接叫 112。</p></article>
   <div class="notice"><b>報警後</b><br>先凍結卡片、保留報案證明與購物單據，再聯絡保險。若護照遺失，聯絡駐義台北代表處。</div>`;
 }
@@ -168,7 +180,7 @@ function renderFood(){
   const visible=foodSpots.filter(x=>foodFilter==='all'||x.city===foodFilter);
   return `<div class="privacy"><b>行程附近，不做必吃打卡壓力</b><br>推薦按你們已排景點整理；營業時間、價格與休業可能改變，當天仍以店家官方資訊為準。€ 是平價，€€€€ 是體驗／高價。</div>
   <div class="filter-row food-filters">${cities.map(city=>`<button class="filter-chip ${foodFilter===city?'active':''}" data-action="food-filter" data-filter="${esc(city)}">${city==='all'?'全部':esc(city)}</button>`).join('')}</div>
-  ${visible.map(x=>`<article class="card food-card"><div class="food-top"><div><span class="kicker">${esc(x.city)} · ${esc(x.near)}</span><h3>${esc(x.name)}</h3></div><span class="price-tag">${esc(x.budget)}</span></div><div class="food-kind">${esc(x.kind)}</div><p><b>建議點：</b>${esc(x.try)}</p><p class="muted">${esc(x.note)}</p><div class="actions">${external(appleMap(x.place),' 導航','strong')}${external(x.url,'官方／參考')}</div></article>`).join('')}
+  ${visible.map(x=>`<article class="card food-card"><div class="food-top"><div><span class="kicker">${esc(x.city)} · ${esc(x.near)}</span><h3>${esc(x.name)}</h3>${x.status?`<span class="meal-status">${esc(x.status)}</span>`:''}</div><span class="price-tag">${esc(x.budget)}</span></div><div class="food-kind">${esc(x.kind)}</div><p><b>建議點：</b>${esc(x.try)}</p><p class="muted">${esc(x.note)}</p><div class="actions">${external(appleMap(x.place),' 導航','strong')}${external(x.url,'官方／參考')}</div></article>`).join('')}
   <div class="section-head"><h2>我的候選清單</h2><span class="small-count">只存這支 iPhone</span></div>
   ${customFood.length?customFood.map(x=>`<article class="card custom-food"><div><span class="kicker">${esc(x.area||'未指定區域')}</span><h3>${esc(x.name)}</h3><p>${esc(x.note||'尚未加備註')}</p></div><button class="delete-round" data-action="delete-food" data-id="${esc(x.id)}" aria-label="刪除 ${esc(x.name)}">×</button></article>`).join(''):'<div class="empty compact-empty">還沒有自訂店家。看到朋友推薦的餐廳時，可直接加在下面。</div>'}
   <form id="foodForm" class="card quick-form"><h2>新增餐飲候選</h2><label><span>店名 *</span><input name="name" required maxlength="80" placeholder="例如：某間咖啡館"></label><label><span>城市／附近景點</span><input name="area" maxlength="80" placeholder="例如：羅馬 · Pantheon"></label><label><span>想吃什麼／備註</span><textarea name="note" maxlength="240" rows="3" placeholder="誰推薦、必點、是否要訂位…"></textarea></label><button class="primary wide" type="submit">加入這支 iPhone</button></form>`;
