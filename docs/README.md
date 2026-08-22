@@ -1,6 +1,14 @@
-# Italia 2026 Travel Companion v1.5.1
+# Italia 2026 Travel Companion v1.6
 
 為 iPhone Safari 設計的義大利旅行 PWA，覆蓋 2026/8/23–9/6。內容包含每日時間軸、住宿與離館提示、個人分組、本機票券錢包、17 條完整中文城市／博物館導覽、地圖、行程附近餐飲、伴手禮、安全指南、義大利語發音與購買清單。
+
+## v1.6 行程校正
+
+- 「當晚住宿」改按實際過夜地點顯示：8/24 起是佛羅倫斯、8/28 起是米蘭兩組，不再把退房日誤當成當晚住宿。
+- 8/25 19:00 Trattoria Dall’Oste（Via Alamanni 3/5R）、8/30 19:00 Lab 聚餐 Amabile Milano 已放入時間軸；9/2 AsPEN 聚餐先標示晚間，等待正式時間與地點。
+- 每一天的時間軸下方新增鄰近用餐清單；已訂聚餐、快食、團體分流與住宿附近備案會分開顯示。
+- 8/23 仍以 Leonardo Express 為首選，不用道路塞車風險較高的機場巴士賭 12:10 競技場預約。
+- 兩個返程組皆以接近起飛前 4 小時到 MXP 為目標，並新增退稅資料包清單；9/6 建議改搭目前官方時刻表的 06:25 班次。
 
 ## v1.5.1 修正
 
@@ -49,7 +57,7 @@ App 沒有雲端帳號。同行者可開同一個 GitHub Pages 網址，但以�
 - 9/3：搭 Italo 8989，15:35 Milano Centrale → 17:52 Venezia Mestre；Check-in 後搭 Line 1 看大運河、San Marco 與 Rialto 夜景。
 - 9/4：Murano Faro 只轉船，依序前往 Burano、Torcello、San Marco、Salute 與 Dorsoduro。
 - 9/5：Frari、San Marco Basilica、Doge’s Palace；17:57 Italo 8992 回 Milano Centrale，20:25 抵達後住 Porta Romana。
-- 9/6：照同行者預排 06:55 Milano Centrale → 07:48 MXP T1，再搭 11:15 BR96。
+- 9/6：為預留退稅時間，建議 06:25 Milano Centrale → 07:18 MXP T1，再搭 11:15 BR96；9/5 晚仍以官方 App／車票確認。
 
 威尼斯時間依同行者提供的預排 Excel 顯示，不在 App 內重新計算分鐘。收到火車、交通、教堂、宮殿與住宿憑證後，可直接上傳到各自 iPhone 的票券頁；實際使用仍以正式票券與當天現場資訊為準。
 
